@@ -7,8 +7,6 @@ This project visualizes buoyancy-driven convection using a **streamfunction–vo
 🔗 **Live Demo:**  
 https://kavyaagarwal2001.github.io/rb-convection/
 
----
-
 ## Overview
 
 Rayleigh–Bénard convection describes the instability that develops when a fluid layer is heated from below and cooled from above. When the **Rayleigh number (Ra)** exceeds a critical threshold, buoyancy overcomes thermal diffusion and organized convection rolls emerge.
@@ -17,52 +15,34 @@ This demo numerically evolves a simplified 2D Boussinesq system and renders both
 
 The goal is to provide an intuitive, interactive visualization of convection dynamics while preserving the structure of the governing equations.
 
----
-
 ## Governing Equations (Streamfunction–Vorticity Formulation)
 
 The simulation uses a 2D streamfunction–vorticity representation:
 
 **Poisson equation for streamfunction**
-\[
+
+$$
 \nabla^2 \psi = -\omega
-\]
+$$
 
 **Buoyancy-forced vorticity relation (simplified form)**
-\[
+
+$$
 \nabla^2 \omega \propto Ra \frac{\partial T}{\partial x}
-\]
+$$
 
 **Temperature advection–diffusion**
-\[
+
+$$
 \frac{\partial T}{\partial t} + \mathbf{u}\cdot\nabla T = \nabla^2 T
-\]
+$$
 
 Velocity components are recovered from the streamfunction:
 
-\[
-u = -\frac{\partial \psi}{\partial z}, \quad 
+$$
+u = -\frac{\partial \psi}{\partial z}, \qquad
 w = \frac{\partial \psi}{\partial x}
-\]
-
----
-
-## Features
-
-- Adjustable **Rayleigh number (Ra)**
-- Adjustable **grid resolution**
-- Adjustable **time step**
-- Adjustable **animation speed**
-- Real-time visualization of:
-  - Temperature field
-  - Velocity vectors
-- Live diagnostics:
-  - Nusselt number (heat transfer efficiency)
-  - Maximum velocity magnitude
-  - Simulation time
-  - Time step count
-
----
+$$
 
 ## Numerical Approach
 
@@ -74,19 +54,6 @@ w = \frac{\partial \psi}{\partial x}
 
 This implementation prioritizes **conceptual clarity and interactivity** rather than high-accuracy CFD convergence.
 
----
-
-## Project Structure
-
-```
-rb-convection/
-├── index.html        # Full simulation and visualization
-├── README.md
-└── dev/              # Optional helper scripts (not required for demo)
-```
-
----
-
 ## Possible Extensions
 
 - Convergence-based Poisson solver
@@ -95,8 +62,6 @@ rb-convection/
 - Critical Rayleigh number validation
 - WebGL acceleration
 - Snapshot export / animation recording
-
----
 
 ## Motivation
 
